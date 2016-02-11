@@ -1,11 +1,14 @@
 import * as React from 'react';
 
+import styles from '@telerik/kendo-theme-default/styles/main';
 import KendoDialogTitleBar from './kendo-dialog-title-bar';
 
 const KendoDialog = (props) => (
-    <div className="k-widget k-window">
+    <div className={styles.widget + " " + styles.window}>
         <KendoDialogTitleBar>{props.title}</KendoDialogTitleBar>
-        {props.children}
+        <div className={styles.content + " " + styles['window-content']}>
+            {props.children}
+        </div>
     </div>
 );
 
