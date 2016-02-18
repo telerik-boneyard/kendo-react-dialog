@@ -14,10 +14,11 @@
     "React"
   ],
   "dependencies": {
-    "react": "~0.14.3",
-    "react-dom": "~0.14.3",
     "@telerik/kendo-react-button": "telerik/kendo-react-button#master",
-    "@telerik/kendo-theme-default": "telerik/kendo-theme-default#master"
+    "@telerik/kendo-theme-default": "telerik/kendo-theme-default#master",
+    "classnames": "^2.2.3",
+    "react": "~0.14.3",
+    "react-dom": "~0.14.3"
   },
   "devDependencies": {
     "@telerik/eslint-config": "telerik/eslint-config-kendo#master",
