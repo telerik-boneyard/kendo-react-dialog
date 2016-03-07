@@ -6,7 +6,15 @@ import { KendoButton } from '@telerik/kendo-react-button';
 const KendoDialogActions = (props) => (
     <div className={styles['action-buttons']}>
         {props.actions.map(
-            action => <KendoButton key={action}>{action}</KendoButton>
+            action => {
+                let button = action;
+
+                if (typeof button == "string") {
+                    button = <KendoButton key={action}>{action}</KendoButton>;
+                }
+
+                return button;
+            }
         )}
     </div>
 );
@@ -15,7 +23,7 @@ KendoDialogActions.propTypes = {
     actions: React.PropTypes.arrayOf(
         React.PropTypes.oneOfType([
             React.PropTypes.string,
-            React.PropTypes.instanceOf(KendoButton)
+            React.PropTypes.node
         ])
     )
 };

@@ -3,6 +3,7 @@ import { shallow } from 'enzyme';
 import KendoDialog from '../src/KendoDialog';
 import KendoDialogTitleBar from '../src/KendoDialogTitleBar';
 import KendoDialogActions from '../src/KendoDialogActions';
+import { KendoButton } from '@telerik/kendo-react-button';
 
 describe('KendoDialog', () => {
     it('renders a div', () => {
@@ -80,5 +81,15 @@ describe('KendoDialogActions', () => {
         expect(buttons.length).toBe(2);
         expect(buttons.nodes[0].props.children).toBe('Yes');
         expect(buttons.nodes[1].props.children).toBe('No');
+    });
+
+    it('accepts button instances for actions', () => {
+        const actions = [ <KendoButton key="1">(image)</KendoButton> ];
+        const dialogActions = shallow(<KendoDialogActions actions={actions} />);
+
+        const buttons = dialogActions.find('KendoButton');
+
+        expect(buttons.length).toBe(1);
+        expect(buttons.nodes[0].props.children).toBe('(image)');
     });
 });
