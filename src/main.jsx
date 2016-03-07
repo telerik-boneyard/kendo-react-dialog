@@ -1,3 +1,5 @@
 import KendoDialog from './KendoDialog';
 
-module.exports = KendoDialog;
+module.exports = {
+    KendoDialog
+};

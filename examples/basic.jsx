@@ -1,6 +1,6 @@
 import * as React from 'react';
 import ReactDOM from 'react-dom';
-import KendoDialog from '../src/KendoDialog';
+import { KendoDialog } from '@telerik/kendo-react-dialog';
 
 ReactDOM.render(
   <KendoDialog actions={[ 'OK' ]} title="Loss of data">

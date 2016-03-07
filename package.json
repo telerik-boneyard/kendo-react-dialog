@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "description": "Kendo UI React Dialog widget",
   "repository": "telerik/kendo-react-dialog",
-  "main": "dist/npm/js/index.js",
+  "main": "dist/npm/js/main.js",
   "scripts": {
     "test": "gulp test",
     "start": "gulp start",
