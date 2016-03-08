@@ -17,7 +17,7 @@ const KendoDialogTitleBar = (props) => {
             <span className={styles['window-title']}>{props.children}</span>
 
             <div className={styles['window-actions']}>
-                <span className={buttonClasses} role="button">
+                <span className={buttonClasses} onClick={props.onClose} role="button">
                     &#x274c;
                 </span>
             </div>
@@ -26,7 +26,8 @@ const KendoDialogTitleBar = (props) => {
 };
 
 KendoDialogTitleBar.propTypes = {
-    children: React.PropTypes.node
+    children: React.PropTypes.node,
+    onClose: React.PropTypes.func
 };
 
 export default KendoDialogTitleBar;

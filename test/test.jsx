@@ -63,6 +63,15 @@ describe('KendoDialogTitleBar', () => {
         expect(titleBar.contains(<i className="icon" />)).toBe(true);
         expect(titleBar.contains("Title")).toBe(true);
     });
+
+    it('onClose handler is called when close button is clicked', () => {
+        const spy = jasmine.createSpy('click');
+        const dialogActions = shallow(<KendoDialogTitleBar onClose={spy} />);
+
+        dialogActions.find('.k-button').simulate('click');
+
+        expect(spy).toHaveBeenCalled();
+    });
 });
 
 describe('KendoDialogActions', () => {
@@ -91,5 +100,15 @@ describe('KendoDialogActions', () => {
 
         expect(buttons.length).toBe(1);
         expect(buttons.nodes[0].props.children).toBe('(image)');
+    });
+
+    it('onClose handler is called when action is clicked', () => {
+        const spy = jasmine.createSpy('click');
+        const dialogActions = shallow(
+            <KendoDialogActions onClose={spy} actions={[ 'OK' ]} />
+        );
+
+        dialogActions.find('KendoButton').simulate('click');
+        expect(spy).toHaveBeenCalled();
     });
 });

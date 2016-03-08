@@ -10,7 +10,11 @@ const KendoDialogActions = (props) => (
                 let button = action;
 
                 if (typeof button == "string") {
-                    button = <KendoButton key={action}>{action}</KendoButton>;
+                    button = (
+                        <KendoButton key={action} onClick={props.onClose}>
+                            {action}
+                        </KendoButton>
+                    );
                 }
 
                 return button;
@@ -25,7 +29,8 @@ KendoDialogActions.propTypes = {
             React.PropTypes.string,
             React.PropTypes.node
         ])
-    )
+    ),
+    onClose: React.PropTypes.func
 };
 
 export default KendoDialogActions;

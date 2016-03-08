@@ -12,19 +12,28 @@ const KendoDialog = (props) => {
 
     return (
         <div className={wrapperClasses}>
-            <KendoDialogTitleBar>{props.title}</KendoDialogTitleBar>
+            <KendoDialogTitleBar onClose={props.onClose}>
+                {props.title}
+            </KendoDialogTitleBar>
 
             <div className={contentClasses}>
                 {props.children}
             </div>
 
-            {props.actions ? <KendoDialogActions actions={props.actions} /> : null}
+            {props.actions ?
+                <KendoDialogActions
+                    actions={props.actions}
+                    onClose={props.onClose}
+                />
+                : null
+            }
         </div>
     );
 };
 
 KendoDialog.propTypes = Object.assign({}, KendoDialogActions.propTypes, {
     children: React.PropTypes.node,
+    onClose: React.PropTypes.func,
     title: React.PropTypes.string
 });
 
