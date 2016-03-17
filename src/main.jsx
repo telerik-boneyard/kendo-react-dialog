@@ -1,5 +1,5 @@
-import KendoDialog from './KendoDialog';
+import Dialog from './Dialog';
 
 module.exports = {
-    KendoDialog
+    Dialog
 };

@@ -1,9 +1,9 @@
 import * as React from 'react';
 
 import styles from '@telerik/kendo-theme-default/styles/dialog/main';
-import { KendoButton } from '@telerik/kendo-react-button';
+import { Button } from '@telerik/kendo-react-button';
 
-const KendoDialogActions = (props) => (
+const DialogActions = (props) => (
     <div className={styles['action-buttons']}>
         {props.actions.map(
             action => {
@@ -11,9 +11,9 @@ const KendoDialogActions = (props) => (
 
                 if (typeof button == "string") {
                     button = (
-                        <KendoButton key={action} onClick={props.onClose}>
+                        <Button key={action} onClick={props.onClose}>
                             {action}
-                        </KendoButton>
+                        </Button>
                     );
                 }
 
@@ -23,7 +23,7 @@ const KendoDialogActions = (props) => (
     </div>
 );
 
-KendoDialogActions.propTypes = {
+DialogActions.propTypes = {
     actions: React.PropTypes.arrayOf(
         React.PropTypes.oneOfType([
             React.PropTypes.string,
@@ -33,4 +33,4 @@ KendoDialogActions.propTypes = {
     onClose: React.PropTypes.func
 };
 
-export default KendoDialogActions;
+export default DialogActions;

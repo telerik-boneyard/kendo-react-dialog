@@ -3,7 +3,7 @@ import * as React from 'react';
 import styles from '@telerik/kendo-theme-default/styles/main';
 import classNames from 'classnames';
 
-const KendoDialogTitleBar = (props) => {
+const DialogTitleBar = (props) => {
     const titleBarClasses = classNames(
         styles.reset, styles.header, styles['window-titlebar']
     );
@@ -25,9 +25,9 @@ const KendoDialogTitleBar = (props) => {
     );
 };
 
-KendoDialogTitleBar.propTypes = {
+DialogTitleBar.propTypes = {
     children: React.PropTypes.node,
     onClose: React.PropTypes.func
 };
 
-export default KendoDialogTitleBar;
+export default DialogTitleBar;
