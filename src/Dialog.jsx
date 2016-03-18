@@ -1,6 +1,7 @@
 import * as React from 'react';
 
 import styles from '@telerik/kendo-theme-default/styles/dialog/main';
+//import Animation from '@telerik/kendo-react-animation';
 import DialogTitleBar from '../src/DialogTitleBar';
 import DialogActions from '../src/DialogActions';
 import classNames from 'classnames';
@@ -28,17 +29,19 @@ const Dialog = (props) => {
         <div>
             {overlay}
 
-            <div className={wrapperClasses}>
-                <DialogTitleBar onClose={props.onClose}>
-                    {props.title}
-                </DialogTitleBar>
+            {/*<Animation effect="k-top">*/}
+                <div className={wrapperClasses}>
+                    <DialogTitleBar onClose={props.onClose}>
+                        {props.title}
+                    </DialogTitleBar>
 
-                <div className={contentClasses}>
-                    {props.children}
+                    <div className={contentClasses}>
+                        {props.children}
+                    </div>
+
+                    {actions}
                 </div>
-
-                {actions}
-            </div>
+            {/*</Animation>*/}
         </div>
     );
 };
