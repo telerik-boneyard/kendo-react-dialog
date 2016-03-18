@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 import styles from '@telerik/kendo-theme-default/styles/dialog/main';
-import { Button } from '@telerik/kendo-react-button';
+import { Button } from '@telerik/kendo-react-buttons';
 
 const DialogActions = (props) => (
     <div className={styles['action-buttons']}>

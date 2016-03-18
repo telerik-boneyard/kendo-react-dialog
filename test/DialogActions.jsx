@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { shallow } from 'enzyme';
 import DialogActions from '../src/DialogActions';
-import { Button } from '@telerik/kendo-react-button';
+import { Button } from '@telerik/kendo-react-buttons';
 
 describe('DialogActions', () => {
     it('renders div', () => {

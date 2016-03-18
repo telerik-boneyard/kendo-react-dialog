@@ -1,11 +1,11 @@
 import * as React from 'react';
 import ReactDOM from 'react-dom';
 import { Dialog } from '@telerik/kendo-react-dialog';
-import { Button } from '@telerik/kendo-react-button';
+import { Button } from '@telerik/kendo-react-buttons';
 
 class App extends React.Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = { sessionExpired: true };
         this.openHandler = this.onOpen.bind(this);
         this.closeHandler = this.onClose.bind(this);
