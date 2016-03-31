@@ -31,14 +31,42 @@ describe('DialogActions', () => {
         expect(buttons.nodes[0].props.children).toBe('(image)');
     });
 
-    it('onClose handler is called when action is clicked', () => {
+    it('onAction handler is called when action is clicked', () => {
         const spy = jasmine.createSpy('click');
         const dialogActions = shallow(
-            <DialogActions onClose={spy} actions={[ 'OK' ]} />
+            <DialogActions onAction={spy} actions={[ 'OK' ]} />
         );
 
         dialogActions.find('Button').simulate('click');
         expect(spy).toHaveBeenCalled();
+    });
+
+    it('provides clicked action to onAction handler', () => {
+        const spy = jasmine.createSpy('click');
+        const ok = { primary: true, text: 'OK' };
+        const cancel = 'Cancel';
+
+        const dialogActions = shallow(
+            <DialogActions onAction={spy} actions={[ ok, cancel ]} />
+        );
+
+        const buttons = dialogActions.find('Button');
+        buttons.first().simulate('click');
+        buttons.last().simulate('click');
+
+        expect(spy).toHaveBeenCalledWith({ action: 'Cancel' });
+        expect(spy).toHaveBeenCalledWith({ action: ok });
+    });
+
+    it('passed object is used to populate button', () => {
+        const dialogActions = shallow(
+            <DialogActions actions={[ { primary: true, text: 'Yup' } ]} />
+        );
+
+        const buttons = dialogActions.find('Button');
+
+        expect(buttons.nodes[0].props.primary).toBe(true);
+        expect(buttons.nodes[0].props.children).toBe('Yup');
     });
 });
 

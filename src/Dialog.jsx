@@ -28,7 +28,7 @@ const Dialog = (props) => {
     let actions = null;
     if (props.actions) {
         actions = (
-            <DialogActions actions={props.actions} onClose={props.onClose} />
+            <DialogActions actions={props.actions} onAction={props.onClose} />
         );
     }
 
