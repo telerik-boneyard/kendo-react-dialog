@@ -14,9 +14,9 @@
     "React"
   ],
   "dependencies": {
-    "@telerik/kendo-react-buttons": "telerik/kendo-react-button#master",
     "@telerik/kendo-react-animation": "~0.1.2",
-    "@telerik/kendo-theme-default": "telerik/kendo-theme-default#master",
+    "@telerik/kendo-react-buttons": "telerik/kendo-react-button#master",
+    "@telerik/kendo-theme-default": "^1.1.0",
     "classnames": "^2.2.3",
     "react": "~0.14.3",
     "react-dom": "~0.14.3"
