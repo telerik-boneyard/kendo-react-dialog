@@ -7,7 +7,14 @@ import DialogActions from '../src/DialogActions';
 import classNames from 'classnames';
 
 const Dialog = (props) => {
-    const wrapperClasses = classNames(styles.widget, styles.window, styles.centered);
+    const hasTitle = props.title !== false;
+
+    const wrapperClasses = classNames({
+        [styles.widget]: true,
+        [styles.window]: true,
+        [styles.centered]: true,
+        [styles['window-titleless']]: !hasTitle
+    });
 
     const contentClasses = classNames(styles.content, styles['window-content']);
 
@@ -25,6 +32,15 @@ const Dialog = (props) => {
         );
     }
 
+    let title = null;
+    if (hasTitle) {
+        title = (
+            <DialogTitleBar onClose={props.onClose}>
+                {props.title}
+            </DialogTitleBar>
+        );
+    }
+
     return (
         <div className={styles['dialog-wrapper']}>
             {overlay}
@@ -35,9 +51,7 @@ const Dialog = (props) => {
                 transitionName={styles['slide-in-appear']}
             >
                 <div className={wrapperClasses}>
-                    <DialogTitleBar onClose={props.onClose}>
-                        {props.title}
-                    </DialogTitleBar>
+                    {title}
 
                     <div className={contentClasses}>
                         {props.children}
@@ -53,7 +67,10 @@ const Dialog = (props) => {
 Dialog.propTypes = Object.assign({}, DialogActions.propTypes, {
     children: React.PropTypes.node,
     onClose: React.PropTypes.func,
-    title: React.PropTypes.string
+    title: React.PropTypes.oneOfType([
+        React.PropTypes.bool,
+        React.PropTypes.string
+    ])
 });
 
 export default Dialog;

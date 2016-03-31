@@ -34,6 +34,14 @@ describe('Dialog', () => {
         expect(titleBar.prop('children')).toBe('Foo');
     });
 
+    it('does not render a title bar when title=false', () => {
+        const dialog = shallow(<Dialog title={false} />);
+
+        const titleBar = dialog.find('DialogTitleBar');
+
+        expect(titleBar.length).toBe(0);
+    });
+
     it('should not render actions if not passed', () => {
         const dialog = shallow(<Dialog />);
 
