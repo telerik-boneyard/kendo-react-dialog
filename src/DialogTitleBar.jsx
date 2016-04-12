@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import styles from '@telerik/kendo-theme-default/styles/main';
+import styles from '@telerik/kendo-theme-default/styles/dialog/main';
 import classNames from 'classnames';
 
 const DialogTitleBar = (props) => {
