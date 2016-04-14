@@ -91,7 +91,7 @@ The Dialog enables you to set specific actions to be taken upon its closing by t
 
 ```
 
-### Actions
+### Buttons
 
 Setting the [`actions`]({% slug api_dialog_kendouiforreact %}#actions-string)configuration property allows you to display buttons for interacting with the Dialog. 
 
