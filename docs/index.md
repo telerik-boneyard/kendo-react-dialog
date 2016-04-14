@@ -71,7 +71,7 @@ The example below demonstrates the default setup of a Kendo UI Dialog for React.
 
 ### Title
 
-The [`title`]({% slug api_dialog_kendouiforreact %}#title-string) property of the Dialog defines the title of the component by accepting `string` parameters.  
+The [`title`]({% slug api_dialog_kendouiforreact %}#title-string) property of the Dialog defines the title of the component by defining `string` parameters.  
 
 ```html-preview
 
@@ -91,25 +91,16 @@ The Dialog enables you to set specific actions to be taken upon its closing by t
 
 ```
 
-## Keyboard Navigation
+### Actions
 
-Below is the list with the keyboard shortcuts the Slider supports.
+Setting the `actions` configuration property allows you to display buttons for interacting with the Dialog. 
 
-| SHORTCUT                            | DESCRIPTION         |
-|:---                                 |:---                 |
-| `...` keys    | Increase the displayed Dialog value with a small step. |
-| `...` keys    | Decrease the displayed Dialog value with a small step. |
+```html-preview
 
+```
+```jsx
 
-## Accessibility
-
-The Dialog is WAI ARIA-accessible through the `Tab` key. The `aria-valuemin`, `aria-valuemax`, and `aria-valuetext` properties define the accessibility values when the user drags the handle of the Dialog or interacts with the Dialog through its buttons.
-
-## Responsiveness
-
-One of the solutions for dynamic resizing in React applications is the [`css-element-queries`](http://marcj.github.io/css-element-queries/) package. It provides resize events using CSS and can be easily implemented along with the Kendo UI Dialog for React.
-
-For an example of a possible implementation, refer to [this GitHub repository](https://github.com/telerik/kendo-react-inputs/blob/master/examples/cdn.html).
+```
 
 ## Suggested Links
 
