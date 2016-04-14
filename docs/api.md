@@ -21,3 +21,9 @@ Defines the title of the component.
 #### onClose `Function`
 
 Enables the setting of specific actions, which the user is prompted to take upon closing the Dialog.
+
+## Buttons
+
+#### actions `String`
+
+Displays buttons for interacting with the Dialog. The pre-defined values are `OK`, `Cancel`...
