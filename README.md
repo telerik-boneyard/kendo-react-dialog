@@ -14,7 +14,7 @@
 
 This repository contains the source code and documentation of the Kendo UI Dialog component for React.
 
-For more information on forthcoming Dialog features, refer to the [Roadmap](https://github.com/telerik/kendo-react-dialog/blob/master/docs/roadmap.md).
+For more information on upcoming Dialog features, refer to the [Roadmap](https://github.com/telerik/kendo-react-dialog/blob/master/docs/roadmap.md).
 
 ## Basic Usage
 
@@ -64,7 +64,7 @@ The Dialog asks users for input, blocking other parts of the page.
 
 ```
 
-For more examples and available configuration options, refer to the [Dialog documentation section](https://github.com/telerik/kendo-react-dialog/blob/master/docs/dialog/overview.md).
+For more examples and available configuration options, refer to the [Dialog documentation section]({% slug overview_dialog_kendouiforreact %}).
 
 ## Installation
 
@@ -89,7 +89,7 @@ var Dialog = require('kendo-react-dialog').Dialog;
 
 ## Browser Support
 
-The Kendo UI Dialog component for React supports all browsers that are supported by the React framework &mdash; Internet Explorer 9 and later versions.
+The Kendo UI Dialog component for React supports all browsers that are supported by the React framework&mdash;Internet Explorer 9 and later versions.
 
 ## Glossary
 
@@ -102,4 +102,3 @@ A Component refers to a [React Component](https://facebook.github.io/react/docs/
 ### Package
 
 A package contains one or more components, developed in a single repository and distributed in a single NPM package. For example, the Kendo UI Slider, MaskedTextBox, NumericTextBox, and Switch components for React are part of the Inputs Package.
-
