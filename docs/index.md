@@ -71,7 +71,7 @@ The example below demonstrates the default setup of a Kendo UI Dialog for React.
 
 ### Title
 
-The [`title`]({% slug api_dialog_kendouiforreact %}#title) property of the Dialog defines the title of the component by accepting `string` parameters.  
+The [`title`]({% slug api_dialog_kendouiforreact %}#title-string) property of the Dialog defines the title of the component by accepting `string` parameters.  
 
 ```html-preview
 
@@ -82,7 +82,7 @@ The [`title`]({% slug api_dialog_kendouiforreact %}#title) property of the Dialo
 
 ### State
 
-The Dialog enables you to set specific actions to be taken upon its closing by the user through setting the [`onClose`] property.
+The Dialog enables you to set specific actions to be taken upon its closing by the user through setting the [`onClose`]({% slug api_dialog_kendouiforreact %}#onclose-function) property.
 
 ```html-preview
 
