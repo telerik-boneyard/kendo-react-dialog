@@ -64,7 +64,7 @@ The Dialog asks users for input, blocking other parts of the page.
 
 ```
 
-For more examples and available configuration options, refer to the [Dialog documentation section]({% slug overview_dialog_kendouiforreact %}).
+For more examples and available configuration options, refer to the [Dialog documentation section](https://github.com/telerik/kendo-react-dialog/tree/master/docs/index.md).
 
 ## Installation
 
