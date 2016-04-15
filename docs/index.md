@@ -14,9 +14,9 @@ The Kendo UI Dialog for React is part of the Dialog `npm` package of the Kendo U
 
 **Figure 1. A template of the Kendo UI Dialog for React**
 
-//a screen to be added
+// TODO: add screenshot
 
-1. Ttitle
+1. Title
 2. Interaction buttons
 3. Content area
 
@@ -27,79 +27,230 @@ The Kendo UI Dialog for React is part of the Dialog `npm` package of the Kendo U
 The example below demonstrates the default setup of a Kendo UI Dialog for React.
 
 ```html-preview
-  <div id="app"></div>
+<div id="app"></div>
 ```
 ```jsx
-  class DialogContainer extends React.Component {
-      constructor(props) {
-          super(props);
-          this.state = { confirmation: false };
-      }
-      onClose(e) {
-          console.log(e);
-          this.setState({ confirmation: true });
-      }
-      render() {
-          const actions =  [ "Yes", "No" ];
+class DialogContainer extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = { confirmation: false };
+    }
+    onClose(e) {
+        this.setState({
+            confirmation: true,
+            action: e.action
+        });
+    }
+    render() {
+        const actions =  [ "Yes", "No" ];
 
-          if (!this.state.confirmation) {
-              return (
-                  <KendoReactDialog.Dialog
-                      modal
-                      title="Action required"
-                      actions={actions}
-                      onClose={this.onClose.bind(this)}
-                  >
-                      Do you accept?
-                  </KendoReactDialog.Dialog>
-              );
-          } else {
-              return (
-                  <span>Confirmed: { this.state.confirmation }.</span>
-              );
-          }
-      }
-  }
+        if (!this.state.confirmation) {
+            return (
+                <KendoReactDialog.Dialog
+                    title="Action required"
+                    actions={actions}
+                    onClose={this.onClose.bind(this)}
+                >
+                    <p>Entropy happened.</p>
+                    <p>Do you accept?</p>
+                </KendoReactDialog.Dialog>
+            );
+        } else {
+            return (
+                <div>
+                  <p>Confirmed: { this.state.action }.</p>
 
-  ReactDOM.render(
-      <DialogContainer />,
-      document.getElementById('app')
-  );
+                  <button onClick={ () => this.setState({ confirmation: false }) }>
+                      Ask again
+                  </button>
+                </div>
+            );
+        }
+    }
+}
+
+ReactDOM.render(
+    <DialogContainer />,
+    document.getElementById('app')
+);
 ```
 
 ## Configuration
 
 ### Title
 
-The [`title`]({% slug api_dialog_kendouiforreact %}#title-string) property of the Dialog defines the title of the component by defining `string` parameters.  
+The [`title`]({% slug api_dialog_kendouiforreact %}#title-string) property of the Dialog defines the title that the component will render.
 
 ```html-preview
-
+<div id="app"></div>
 ```
 ```jsx
+ReactDOM.render(
+    <KendoReactDialog.Dialog title="Impressive title">
+      No need for content, look at the awesome title!
+    </KendoReactDialog.Dialog>,
+    document.getElementById('app')
+);
+```
 
+Setting `title: false` will instruct the component to render no title.
+
+```html-preview
+<div id="app"></div>
+```
+```jsx
+ReactDOM.render(
+    <KendoReactDialog.Dialog title={false}>
+      <p>Subscribe to our newsletter!</p>
+      <p>
+          <input placeholder="Your e-mail here" />
+          <button>I gladly accept</button>
+      </p>
+      <p>Resistance is futile.</p>
+    </KendoReactDialog.Dialog>,
+    document.getElementById('app')
+);
+```
+
+The title accepts arbirary components, too.
+
+```html-preview
+<div id="app"></div>
+```
+```jsx
+class LoadingIndicator {
+  render() {
+    return (
+      <span>
+        <img src="http://goo.gl/OAo2Mg" />
+        <span> Very custom, much wow.</span>
+      </span>
+    );
+  }
+}
+
+ReactDOM.render(
+    <KendoReactDialog.Dialog title={<LoadingIndicator />}>
+      And you thought the previous title was impressive!
+    </KendoReactDialog.Dialog>,
+    document.getElementById('app')
+);
 ```
 
 ### State
 
-The Dialog enables you to set specific actions to be taken upon its closing by the user through setting the [`onClose`]({% slug api_dialog_kendouiforreact %}#onclose-function) property.
+The Dialog is designed as a astateless component. To store the state whether it is open, wrap it in a high-order component.
+
+The [`onClose`](https://github.com/telerik/kendo-react-dialog/blob/master/docs/api.md#onclose-function) event fires each time a user clicks on a dialog button. If the button is an action button, its props are passed in the argument of the `onClose` callback.
 
 ```html-preview
-
+<div id="app"></div>
 ```
 ```jsx
+class DialogContainer extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = { confirmation: false };
+    }
+    onClose(e) {
+        this.setState({
+            confirmation: true,
+            action: e.action
+        });
+    }
+    render() {
+        const actions =  [ "Yes", "No" ];
 
+        if (!this.state.confirmation) {
+            return (
+                <KendoReactDialog.Dialog
+                    title="Action required"
+                    actions={actions}
+                    onClose={this.onClose.bind(this)}
+                >
+                    Do you accept?
+                </KendoReactDialog.Dialog>
+            );
+        } else {
+            return (
+                <div>
+                  <p>Confirmed: { this.state.action }.</p>
+
+                  <button onClick={ () => this.setState({ confirmation: false }) }>
+                      Ask again
+                  </button>
+                </div>
+            );
+        }
+    }
+}
+
+ReactDOM.render(
+    <DialogContainer />,
+    document.getElementById('app')
+);
 ```
 
 ### Buttons
 
-Setting the [`actions`]({% slug api_dialog_kendouiforreact %}#actions-string)configuration property allows you to display buttons for interacting with the Dialog. 
+Setting the [`actions`]({% slug api_dialog_kendouiforreact %}#actions-string) configuration property allows you to display buttons for interacting with the Dialog.
 
 ```html-preview
+<div id="app"></div>
+```
+```jsx
+const actions = [
+    "This is crazy!",
+    "Maybe."
+];
 
+ReactDOM.render(
+    <KendoReactDialog.Dialog title="I just met you..." actions={actions}>
+      Call me, maybe?
+    </KendoReactDialog.Dialog>,
+    document.getElementById('app')
+);
+```
+
+Actions can be specified as objects, which are passed to the Kendo UI Button for React. For a complete list of options, see its [API documentation](https://github.com/telerik/kendo-react-buttons/blob/master/docs/button/api.md).
+
+```html-preview
+<div id="app"></div>
+```
+```jsx
+const actions = [
+    { text: "Keep doing that", primary: true },
+    { text: "Whatever", onClick: () => { alert('Whatever.') } }
+];
+
+ReactDOM.render(
+    <KendoReactDialog.Dialog title="Reassuring title" actions={actions}>
+      Do not worry, your data has not been deleted.
+    </KendoReactDialog.Dialog>,
+    document.getElementById('app')
+);
+```
+
+Actions can be defined as custom components. When providing actions as components, clicking them will not trigger the onClose handler. Event handlers need to be provided explicitly on each action.
+
+```html-preview
+<div id="app"></div>
+<style>button { margin: 0 1em; }</style>
 ```
 ```jsx
 
+const actions = [
+    <button>Accept</button>,
+    <a href="#">Decline</a>
+];
+
+ReactDOM.render(
+    <KendoReactDialog.Dialog title="Terms of service" actions={actions}>
+      <p>The terms of service are not yet written.</p>
+      <p>Nobody reads them anyway.</p>
+    </KendoReactDialog.Dialog>,
+    document.getElementById('app')
+);
 ```
 
 ## Suggested Links
