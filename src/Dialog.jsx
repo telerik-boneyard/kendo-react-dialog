@@ -18,13 +18,6 @@ const Dialog = (props) => {
 
     const contentClasses = classNames(styles.content, styles['window-content']);
 
-    let overlay = null;
-    if (props.modal) {
-        overlay = (
-            <div className={styles.overlay} onClick={props.onClose}></div>
-        );
-    }
-
     let actions = null;
     if (props.actions) {
         actions = (
@@ -43,7 +36,7 @@ const Dialog = (props) => {
 
     return (
         <div className={styles['dialog-wrapper']}>
-            {overlay}
+            <div className={styles.overlay} onClick={props.onClose}></div>
 
             <Animation
                 transitionAppear

@@ -56,8 +56,8 @@ describe('Dialog', () => {
         expect(dialog.find('DialogActions').props().actions).toBe(actions);
     });
 
-    it('renders overlay if dialog is modal', () => {
-        const dialog = shallow(<Dialog modal={true} />);
+    it('renders overlay', () => {
+        const dialog = shallow(<Dialog />);
 
         expect(dialog.find('.k-overlay').length).toBe(1);
     });
