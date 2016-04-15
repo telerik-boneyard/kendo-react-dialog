@@ -3,11 +3,11 @@
   <head>
     <meta charset="utf-8" />
     <title>CDN example</title>
-    <link rel="stylesheet" href="../dist/cdn/css/kendo-react-button.css" />
+    <link rel="stylesheet" href="../dist/cdn/css/kendo-react-dialog.css" />
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.6/react.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.6/react-with-addons.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.6/react-dom.js"></script>
-    <script src="../dist/cdn/js/main.js"></script>
+    <script src="../dist/cdn/js/kendo-react-dialog.js"></script>
   </head>
   <body>
     <div id="content">
@@ -15,9 +15,20 @@
 
     <script>
       var App = React.createClass({displayName: 'App',
-        render: function() {
+        getInitialState() {
+          return {
+            title: "Title text",
+            onClose: this.onClose
+          };
+        },
+        onChange(e) {
+          alert("Without a dialog, this example will be empty.");
+        },
+        render() {
           return (
-            React.createElement(KendoReactDialog, {  })
+            React.createElement(KendoReactDialog.Dialog, this.state, [
+              "Text content, or react components"
+            ])
           );
         }
       });
