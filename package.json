@@ -26,7 +26,7 @@
     "cz-conventional-changelog": "^1.1.5",
     "ghooks": "^1.0.3",
     "gulp": "3.9.0",
-    "@telerik/kendo-react-tasks": "1.0.0",
+    "@telerik/kendo-react-tasks": "^1.0.0",
     "validate-commit-msg": "^1.1.1"
   },
   "author": "Telerik",
