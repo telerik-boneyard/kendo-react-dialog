@@ -10,20 +10,30 @@ position: 2
 
 Represents the Kendo UI Dialog component for React.
 
-## Ttile
+## Title
 
-#### title `String`
+#### title `String|Boolean`
 
-Defines the title of the component.
+Defines the title of the component. When set to `false`, the title bar is not displayed.
 
-## State   
+## State
 
 #### onClose `Function`
 
-Enables the setting of specific actions, which the user is prompted to take upon closing the Dialog.
+As a stateless component, the Dialog fires its `onClose` event handler every time when a button is clicked. The function should be handled by its parent component.
+
+##### action `Object`
+
+Indicates which button has triggered the closing of the window. Passes the complete object provided in the `actions` array. This field is `undefined` when the titlebar close button is clicked.
 
 ## Buttons
 
-#### actions `String`
+#### actions `Array`
 
-Displays buttons for interacting with the Dialog. The pre-defined values are `OK`, `Cancel`...
+Displays buttons for interacting with the Dialog. Accepts `String`, `Object` and `React.Component` instances.
+
+When an item is a `String`, a button with this string label is rendered.
+
+When an item is an `Object`, it is passed as props to a Kendo UI Button.
+
+When an item is a `React.Component`, it is rendered in the button area. Components do not trigger the `onClose` function automatically, and need to handle their click events manually.
