@@ -41,7 +41,10 @@ const Dialog = (props) => {
             <Animation
                 transitionAppear
                 transitionAppearTimeout={300}
-                transitionName={styles['slide-in-appear']}
+                transitionName={{
+                    appear: styles['slide-in-appear'],
+                    appearActive: styles['slide-in-appear-active']
+                }}
             >
                 <div className={wrapperClasses}>
                     {title}
