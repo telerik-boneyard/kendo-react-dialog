@@ -7,11 +7,13 @@ class App extends React.Component {
     constructor(props) {
         super(props);
         this.state = { sessionExpired: true };
+
         this.openHandler = this.onOpen.bind(this);
         this.closeHandler = this.onClose.bind(this);
     }
 
-    onClose() {
+    onClose(e) {
+        console.log(e);
         this.setState({ sessionExpired: false });
     }
 
@@ -20,14 +22,24 @@ class App extends React.Component {
     }
 
     render() {
+        const actions = [
+            // Custom JSX element
+            <Button onClick={ this.closeHandler }>Custom JSX</Button>,
+
+            // Text for Kendo UI button
+            "Simple text",
+
+            // Options for Kendo UI button
+            { text: "Button options", primary: true }
+        ];
+
         const dialog = (
             <Dialog
-                actions={[ 'OK' ]}
+                actions={actions}
                 onClose={this.closeHandler}
-                title="Session expired"
+                title="Example dialog"
             >
-              <p>Your session has expired.</p>
-              <p>You have been signed out.</p>
+              <p>This example shows how to specify dialog actions.</p>
             </Dialog>
         );
 
