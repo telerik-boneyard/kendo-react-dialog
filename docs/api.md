@@ -1,12 +1,12 @@
 ---
-title: Client-Side API
-page_title: Client-Side API | Kendo UI Dialog for React
-description: "Configure and customize the Kendo UI Dialog for React through its client-side API reference."
+title: API
+page_title: API | Kendo UI Dialog for React
+description: "Configure and customize the Kendo UI Dialog for React through its API reference."
 slug: api_dialog_kendouiforreact
 position: 2
 ---
 
-# Dialog Client-Side API (draft)
+# Dialog API 
 
 Represents the Kendo UI Dialog component for React.
 
