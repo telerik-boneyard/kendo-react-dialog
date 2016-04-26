@@ -14,11 +14,12 @@ The Kendo UI Dialog for React is part of the Dialog `npm` package of the Kendo U
 
 **Figure 1. A template of the Kendo UI Dialog for React**
 
-// TODO: add screenshot
+![Template of the Dialog](images/dialog.png)
 
-1. Title
-2. Interaction buttons
-3. Content area
+1. Title  
+2. Close button  
+3. Content area  
+4. Interaction buttons  
 
 ## Demos
 
@@ -93,7 +94,7 @@ ReactDOM.render(
 );
 ```
 
-Setting `title: false` will instruct the component to render no title.
+Setting `title: false` instructs the component to render no title.
 
 ```html-preview
 <div id="app"></div>
@@ -112,7 +113,7 @@ ReactDOM.render(
 );
 ```
 
-The title accepts arbirary components, too.
+The title accepts arbitrary components, too.
 
 ```html-preview
 <div id="app"></div>
@@ -139,9 +140,9 @@ ReactDOM.render(
 
 ### State
 
-The Dialog is designed as a astateless component. To store the state whether it is open, wrap it in a high-order component.
+The Dialog is designed as a stateless component. To store the state&mdash;whether or not the Dialog is open&mdash;wrap it in a high-order component.
 
-The [`onClose`](https://github.com/telerik/kendo-react-dialog/blob/master/docs/api.md#onclose-function) event fires each time a user clicks on a dialog button. If the button is an action button, its props are passed in the argument of the `onClose` callback.
+The [`onClose`](https://github.com/telerik/kendo-react-dialog/blob/master/docs/api.md#onclose-function) event fires each time a user clicks on a Dialog button. If the button is an action button, its props are passed in the argument of the `onClose` callback.
 
 ```html-preview
 <div id="app"></div>
@@ -212,7 +213,7 @@ ReactDOM.render(
 );
 ```
 
-Actions can be specified as objects, which are passed to the Kendo UI Button for React. For a complete list of options, see its [API documentation](https://github.com/telerik/kendo-react-buttons/blob/master/docs/button/api.md).
+Actions can be specified as objects, which are passed to the Kendo UI Button for React. For a complete list of options, see the [Kendo UI Button API documentation for React](https://github.com/telerik/kendo-react-buttons/blob/master/docs/button/api.md).
 
 ```html-preview
 <div id="app"></div>
@@ -231,7 +232,7 @@ ReactDOM.render(
 );
 ```
 
-Actions can be defined as custom components. When providing actions as components, clicking them will not trigger the onClose handler. Event handlers need to be provided explicitly on each action.
+Actions can be defined as custom components. When providing actions as components, clicking them does not trigger the `onClose` handler. Event handlers need to be provided explicitly on each action.
 
 ```html-preview
 <div id="app"></div>
@@ -255,4 +256,4 @@ ReactDOM.render(
 
 ## Suggested Links
 
-* [Client-Side API Reference for the Kendo UI Dialog Component]({% slug api_dialog_kendouiforreact %})
+* [API Reference of the Dialog Component]({% slug api_dialog_kendouiforreact %})
