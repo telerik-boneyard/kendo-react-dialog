@@ -17,7 +17,7 @@ The Kendo UI Dialog for React is part of the Dialog `npm` package of the Kendo U
 ![Template of the Dialog](images/dialog.png)
 
 1. Title  
-2. Close button  
+2. **Close** button  
 3. Content area  
 4. Interaction buttons  
 
