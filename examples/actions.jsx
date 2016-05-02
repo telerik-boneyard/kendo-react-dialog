@@ -26,9 +26,6 @@ class App extends React.Component {
             // Custom JSX element
             <Button onClick={ this.closeHandler }>Custom JSX</Button>,
 
-            // Text for Kendo UI button
-            "Simple text",
-
             // Options for Kendo UI button
             { text: "Button options", primary: true }
         ];

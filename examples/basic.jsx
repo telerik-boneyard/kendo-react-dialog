@@ -22,7 +22,7 @@ class App extends React.Component {
     render() {
         const dialog = (
             <Dialog
-                actions={[ 'OK' ]}
+                actions={[ { text: 'OK' } ]}
                 onClose={this.closeHandler}
                 title="Session expired"
             >

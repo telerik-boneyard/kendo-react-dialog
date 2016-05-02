@@ -29,10 +29,6 @@ class DialogActions extends React.Component {
                         let button = action;
 
                         if (!React.isValidElement(button)) {
-                            if (typeof button == "string") {
-                                button = { text: button };
-                            }
-
                             button = (
                                 <Button
                                     key={index}
@@ -55,7 +51,6 @@ class DialogActions extends React.Component {
 DialogActions.propTypes = {
     actions: React.PropTypes.arrayOf(
         React.PropTypes.oneOfType([
-            React.PropTypes.string,
             React.PropTypes.object,
             React.PropTypes.node
         ])

@@ -43,7 +43,10 @@ class DialogContainer extends React.Component {
         });
     }
     render() {
-        const actions =  [ "Yes", "No" ];
+        const actions =  [
+            { text: "Yes" },
+            { text: "No" }
+        ];
 
         if (!this.state.confirmation) {
             return (
@@ -156,11 +159,14 @@ class DialogContainer extends React.Component {
     onClose(e) {
         this.setState({
             confirmation: true,
-            action: e.action
+            action: e.action.text
         });
     }
     render() {
-        const actions =  [ "Yes", "No" ];
+        const actions =  [
+            { text: "Yes" },
+            { text: "No" }
+        ];
 
         if (!this.state.confirmation) {
             return (
@@ -194,26 +200,15 @@ ReactDOM.render(
 
 ### Buttons
 
-Setting the [`actions`]({% slug api_dialog_kendouiforreact %}#actions-string) configuration property allows you to display buttons for interacting with the Dialog.
+The [`actions`]({% slug api_dialog_kendouiforreact %}#actions-array) configuration property allows you to display buttons for interacting with the Dialog.
 
-```html-preview
-<div id="app"></div>
-```
-```jsx
-const actions = [
-    "This is crazy!",
-    "Maybe."
-];
+Actions are specified as objects, which are passed to the Kendo UI Button for React. The available options include:
 
-ReactDOM.render(
-    <KendoReactDialog.Dialog title="I just met you..." actions={actions}>
-      Call me, maybe?
-    </KendoReactDialog.Dialog>,
-    document.getElementById('app')
-);
-```
+* `text` (`String`) - The rendered text of the button
+* `primary` (`Boolean`) - Whether the rendered button is a primary button
+* `onClick` (`Function`) - A function that will be executed when the button is clicked.
 
-Actions can be specified as objects, which are passed to the Kendo UI Button for React. For a complete list of options, see the [Kendo UI Button API documentation for React](https://github.com/telerik/kendo-react-buttons/blob/master/docs/button/api.md).
+For a complete list of options, see the [Kendo UI Button API documentation for React](https://github.com/telerik/kendo-react-buttons/blob/master/docs/button/api.md).
 
 ```html-preview
 <div id="app"></div>
@@ -221,7 +216,7 @@ Actions can be specified as objects, which are passed to the Kendo UI Button for
 ```jsx
 const actions = [
     { text: "Keep doing that", primary: true },
-    { text: "Whatever", onClick: () => { alert('Whatever.') } }
+    { text: "Whatever", onClick: () => { /* delete the data */ } }
 ];
 
 ReactDOM.render(

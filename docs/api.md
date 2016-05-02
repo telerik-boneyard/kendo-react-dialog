@@ -30,8 +30,7 @@ Indicates which button triggered the closing of the window. Passes the complete 
 
 #### actions `Array`
 
-Displays buttons for interacting with the Dialog. Accepts `String`, `Object`, and `React.Component` instances.
+Displays buttons for interacting with the Dialog. Accepts `Object` or `React.Component` instances.
 
-* When an item is a `String`, a button with this string label is rendered.
-* When an item is an `Object`, it is passed as props to a Kendo UI Button component for React.
+* When an item is an `Object`, it is passed as props to a Kendo UI Button component for React. When the button is clicked, the object is passed as a parameter of the `onClose` function.
 * When an item is a `React.Component`, it is rendered in the button area. Components do not trigger the `onClose` function automatically, and need to handle their click events manually.
