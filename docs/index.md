@@ -16,10 +16,10 @@ The Kendo UI Dialog for React is part of the Dialog `npm` package of the Kendo U
 
 ![Template of the Dialog](images/dialog.png)
 
-1. Title  
-2. **Close** button  
-3. Content area  
-4. Interaction buttons  
+1. Title
+2. **Close** button
+3. Content area
+4. Interaction buttons
 
 ## Demos
 
@@ -34,12 +34,12 @@ The example below demonstrates the default setup of a Kendo UI Dialog for React.
 class DialogContainer extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { confirmation: false };
+        this.state = { showConfirmation: false };
     }
     onClose(e) {
         this.setState({
-            confirmation: true,
-            action: e.action
+            showConfirmation: true,
+            action: e.action ? e.action.text : "No"
         });
     }
     render() {
@@ -48,7 +48,7 @@ class DialogContainer extends React.Component {
             { text: "No" }
         ];
 
-        if (!this.state.confirmation) {
+        if (!this.state.showConfirmation) {
             return (
                 <KendoReactDialog.Dialog
                     title="Action required"
@@ -64,7 +64,7 @@ class DialogContainer extends React.Component {
                 <div>
                   <p>Confirmed: { this.state.action }.</p>
 
-                  <button onClick={ () => this.setState({ confirmation: false }) }>
+                  <button onClick={ () => this.setState({ showConfirmation: false }) }>
                       Ask again
                   </button>
                 </div>
@@ -143,7 +143,7 @@ ReactDOM.render(
 
 ### State
 
-The Dialog is designed as a stateless component. To store the state&mdash;whether or not the Dialog is open&mdash;wrap it in a high-order component.
+The Dialog is designed as a stateless component. When rendered, it will immediately show. To close the dialog, do not render it. This means that an enclosing component needs to keep the state whether the dialog is visible.
 
 The [`onClose`](https://github.com/telerik/kendo-react-dialog/blob/master/docs/api.md#onclose-function) event fires each time a user clicks on a Dialog button. If the button is an action button, its props are passed in the argument of the `onClose` callback.
 
@@ -154,12 +154,12 @@ The [`onClose`](https://github.com/telerik/kendo-react-dialog/blob/master/docs/a
 class DialogContainer extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { confirmation: false };
+        this.state = { showConfirmation: false };
     }
     onClose(e) {
         this.setState({
-            confirmation: true,
-            action: e.action.text
+            showConfirmation: true,
+            action: e.action ? e.action.text : "No"
         });
     }
     render() {
@@ -168,7 +168,7 @@ class DialogContainer extends React.Component {
             { text: "No" }
         ];
 
-        if (!this.state.confirmation) {
+        if (!this.state.showConfirmation) {
             return (
                 <KendoReactDialog.Dialog
                     title="Action required"
@@ -183,7 +183,7 @@ class DialogContainer extends React.Component {
                 <div>
                   <p>Confirmed: { this.state.action }.</p>
 
-                  <button onClick={ () => this.setState({ confirmation: false }) }>
+                  <button onClick={ () => this.setState({ showConfirmation: false }) }>
                       Ask again
                   </button>
                 </div>
@@ -234,7 +234,6 @@ Actions can be defined as custom components. When providing actions as component
 <style>button { margin: 0 1em; }</style>
 ```
 ```jsx
-
 const actions = [
     <button>Accept</button>,
     <a href="#">Decline</a>
