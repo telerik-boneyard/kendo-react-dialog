@@ -42,6 +42,15 @@ describe('Dialog', () => {
         expect(titleBar.length).toBe(0);
     });
 
+    it('passes element children to title bar', () => {
+        const icon = <i className='foo' />;
+        const dialog = shallow(<Dialog title={icon} />);
+
+        const titleBar = dialog.find('DialogTitleBar');
+
+        expect(titleBar.contains(icon)).toBe(true);
+    });
+
     it('should not render actions if not passed', () => {
         const dialog = shallow(<Dialog />);
 
@@ -49,7 +58,7 @@ describe('Dialog', () => {
     });
 
     it('renders provided actions', () => {
-        const actions = ["OK"];
+        const actions = [ { text: "OK" } ];
         const dialog = shallow(<Dialog actions={actions} />);
 
         expect(dialog.find('DialogActions').length).toBe(1);

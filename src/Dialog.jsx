@@ -60,13 +60,15 @@ const Dialog = (props) => {
     );
 };
 
-Dialog.propTypes = Object.assign({}, DialogActions.propTypes, {
+Dialog.propTypes = {
+    actions: DialogActions.propTypes.actions,
     children: React.PropTypes.node,
     onClose: React.PropTypes.func,
     title: React.PropTypes.oneOfType([
         React.PropTypes.bool,
+        React.PropTypes.node,
         React.PropTypes.string
     ])
-});
+};
 
 export default Dialog;

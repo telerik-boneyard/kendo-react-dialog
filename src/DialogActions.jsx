@@ -49,12 +49,7 @@ class DialogActions extends React.Component {
 }
 
 DialogActions.propTypes = {
-    actions: React.PropTypes.arrayOf(
-        React.PropTypes.oneOfType([
-            React.PropTypes.object,
-            React.PropTypes.node
-        ])
-    ),
+    actions: React.PropTypes.arrayOf(React.PropTypes.object),
     onAction: React.PropTypes.func
 };
 
