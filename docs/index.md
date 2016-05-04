@@ -97,25 +97,6 @@ ReactDOM.render(
 );
 ```
 
-Setting `title: false` instructs the component to render no title.
-
-```html-preview
-<div id="app"></div>
-```
-```jsx
-ReactDOM.render(
-    <KendoReactDialog.Dialog title={false}>
-      <p>Subscribe to our newsletter!</p>
-      <p>
-          <input placeholder="Your e-mail here" />
-          <button>I gladly accept</button>
-      </p>
-      <p>Resistance is futile.</p>
-    </KendoReactDialog.Dialog>,
-    document.getElementById('app')
-);
-```
-
 The title accepts arbitrary components, too.
 
 ```html-preview
@@ -136,6 +117,25 @@ class LoadingIndicator {
 ReactDOM.render(
     <KendoReactDialog.Dialog title={<LoadingIndicator />}>
       And you thought the previous title was impressive!
+    </KendoReactDialog.Dialog>,
+    document.getElementById('app')
+);
+```
+
+Setting `title: false` instructs the component to render no title.
+
+```html-preview
+<div id="app"></div>
+```
+```jsx
+ReactDOM.render(
+    <KendoReactDialog.Dialog title={false}>
+      <p>Subscribe to our newsletter!</p>
+      <p>
+          <input placeholder="Your e-mail here" />
+          <button>I gladly accept</button>
+      </p>
+      <p>Resistance is futile.</p>
     </KendoReactDialog.Dialog>,
     document.getElementById('app')
 );
