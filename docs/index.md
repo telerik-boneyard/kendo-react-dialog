@@ -143,7 +143,7 @@ ReactDOM.render(
 
 ### State
 
-The Dialog is designed as a stateless component. When rendered, it will immediately show. To close the dialog, do not render it. This means that an enclosing component needs to keep the state whether the dialog is visible.
+The Dialog is designed as a stateless component. When rendered, it is immediately displayed. To close the dialog, do not render it. This means that you should keep the state of the Dialog&mdash;whether it is visible or not&mdash;in an enclosing component.
 
 The [`onClose`](https://github.com/telerik/kendo-react-dialog/blob/master/docs/api.md#onclose-function) event fires each time a user clicks on a Dialog button. If the button is an action button, its props are passed in the argument of the `onClose` callback.
 
