@@ -1,6 +1,6 @@
 {
   "name": "@telerik/kendo-react-dialog",
-  "description": "Kendo UI React Dialog widget",
+  "description": "Kendo UI React Dialog component",
   "version": "0.0.0-semantically-released",
   "repository": {
     "type": "git",

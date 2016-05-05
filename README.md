@@ -1,4 +1,6 @@
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
+[![npm version](https://badge.fury.io/js/%40telerik%2Fkendo-react-dialog.svg)](https://badge.fury.io/js/%40telerik%2Fkendo-react-dialog)
+[![Build Status](https://travis-ci.org/telerik/kendo-react-dialog.svg?branch=master)](https://travis-ci.org/telerik/kendo-react-dialog)
 
 ## Kendo UI Dialog for React
 
