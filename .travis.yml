@@ -30,11 +30,11 @@ before_script:
 script:
   - npm run lint
   - npm run test
-  - npm run e2e-npm
+    # - npm run e2e-npm
   - npm run build-package
   - npm run build-cdn
 after_success:
-  - npm run semantic-release
+    # - npm run semantic-release
 branches:
   except:
     - "/^v\\d+\\.\\d+\\.\\d+$/"
