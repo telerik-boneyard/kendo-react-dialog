@@ -83,7 +83,7 @@ ReactDOM.render(
 
 ### Title
 
-The [`title`]({% slug api_dialog_kendouiforreact %}#title-string) property of the Dialog defines the title that the component will render.
+The [`title`]({% slug api_dialog_kendouiforreact %}#title-string) property of the Dialog defines the title the component will render.
 
 ```html-preview
 <div id="app"></div>
@@ -97,7 +97,7 @@ ReactDOM.render(
 );
 ```
 
-The title accepts arbitrary components, too.
+The `title` property can accept arbitrary components.
 
 ```html-preview
 <div id="app"></div>
@@ -122,7 +122,7 @@ ReactDOM.render(
 );
 ```
 
-Setting `title: false` instructs the component to render no title.
+The `title` property can accept Boolean values as well. To render a title, set `title` to `true`. To avoid rendering a title bar, set `title` to `false`. 
 
 ```html-preview
 <div id="app"></div>
@@ -141,7 +141,7 @@ ReactDOM.render(
 );
 ```
 
-### State
+### Events
 
 The Dialog is designed as a stateless component. When rendered, it is immediately displayed. To close the dialog, do not render it. This means that you should keep the state of the Dialog&mdash;whether it is visible or not&mdash;in an enclosing component.
 
@@ -200,13 +200,13 @@ ReactDOM.render(
 
 ### Buttons
 
-The [`actions`]({% slug api_dialog_kendouiforreact %}#actions-array) configuration property allows you to display buttons for interacting with the Dialog.
+The [`actions`]({% slug api_dialog_kendouiforreact %}#actions-array) property allows you to display buttons for interacting with the Dialog.
 
 Actions are specified as objects, which are passed to the Kendo UI Button for React. The available options include:
 
-* `text` (`String`) - The rendered text of the button
-* `primary` (`Boolean`) - Whether the rendered button is a primary button
-* `onClick` (`Function`) - A function that will be executed when the button is clicked.
+* The `text` (`String`) option&mdash;The rendered text of the button.
+* The `primary` (`Boolean`) option&mdash;Whether the rendered button is a primary button
+* The `onClick` (`Function`) option&mdash;A function that is executed on a button click.
 
 For a complete list of options, see the [Kendo UI Button API documentation for React](https://github.com/telerik/kendo-react-buttons/blob/master/docs/button/api.md).
 
