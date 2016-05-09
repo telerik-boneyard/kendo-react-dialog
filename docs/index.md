@@ -12,7 +12,7 @@ The Kendo UI Dialog for React is a component that communicates information to th
 
 The Kendo UI Dialog for React is part of the Dialog `npm` package of the Kendo UI suite for React.
 
-**Figure 1. A template of the Kendo UI Dialog for React**
+**Figure 1. A template of the Dialog for React**
 
 ![Template of the Dialog](images/dialog.png)
 
