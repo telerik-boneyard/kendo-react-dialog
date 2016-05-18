@@ -14,7 +14,7 @@
 
 ## Overview
 
-This repository contains the source code and documentation of the Kendo UI Dialog component for React.
+This repository contains the source code and documentation of the Kendo UI Dialog package for React.
 
 For more information on upcoming Dialog features, refer to the [Roadmap](https://github.com/telerik/kendo-react-dialog/blob/master/docs/roadmap.md).
 
@@ -91,7 +91,7 @@ var Dialog = require('kendo-react-dialog').Dialog;
 
 ## Browser Support
 
-The Dialog component supports all browsers supported by the React framework&mdash;Internet Explorer 9 and later versions.
+The Dialog component works in all browsers supported by the React framework&mdash;Internet Explorer 9 and later versions.
 
 ## Glossary
 
