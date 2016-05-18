@@ -66,19 +66,19 @@ The Dialog asks users for input, blocking other parts of the page.
 
 ```
 
-For more examples and available configuration options, refer to the [Dialog documentation section](https://github.com/telerik/kendo-react-dialog/tree/master/docs/index.md).
+For more examples and available configuration options, refer to the [Dialog documentation](https://github.com/telerik/kendo-react-dialog/tree/master/docs/index.md).
 
 ## Installation
 
-The React Dialog is published as a [public scoped NPM package](https://docs.npmjs.com/misc/scope) in the [Telerik organization](https://www.npmjs.com/~telerik) in http://npmjs.org/.
+The Dialog is published as a [public scoped NPM package](https://docs.npmjs.com/misc/scope) in the [Telerik organization](https://www.npmjs.com/~telerik) in http://npmjs.org/.
 
-Install it using NPM:
+Install it using NPM.
 
 ```sh
 npm install --save @telerik/kendo-react-dialog;
 ```
 
-Once installed, import the module:
+Once installed, import the module.
 
 ```jsx
 // ES2015 module syntax
@@ -91,7 +91,7 @@ var Dialog = require('kendo-react-dialog').Dialog;
 
 ## Browser Support
 
-The Kendo UI Dialog component for React supports all browsers that are supported by the React framework&mdash;Internet Explorer 9 and later versions.
+The Dialog component supports all browsers supported by the React framework&mdash;Internet Explorer 9 and later versions.
 
 ## Glossary
 
@@ -103,4 +103,4 @@ A Component refers to a [React Component](https://facebook.github.io/react/docs/
 
 ### Package
 
-A package contains one or more components, developed in a single repository and distributed in a single NPM package. For example, the Kendo UI Slider, MaskedTextBox, NumericTextBox, and Switch components for React are part of the Inputs Package.
+A package contains one or more components, developed in a single repository and distributed in a single NPM package.
