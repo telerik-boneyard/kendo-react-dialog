@@ -91,7 +91,7 @@ var Dialog = require('kendo-react-dialog').Dialog;
 
 ## Browser Support
 
-The Dialog component works in all browsers supported by the React framework&mdash;Internet Explorer 9 and later versions.
+The Dialog works in all browsers supported by the React framework&mdash;Internet Explorer 9 and later versions.
 
 ## Glossary
 
