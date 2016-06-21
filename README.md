@@ -40,9 +40,8 @@ The Dialog asks users for input, blocking other parts of the page.
         render() {
             const dialog = (
                 <Dialog
-                    modal
-                    actions={[ "OK" ]}
                     title="You can do anything."
+                    actions={[ { text: "OK" } ]}
                     onClose={this.closeHandler}
                 >
                     Welcome to Zombo.com.
