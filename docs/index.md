@@ -120,7 +120,7 @@ ReactDOM.render(
 );
 ```
 
-The `title` property accepts Boolean values as well. To render a title, set `title` to `true`. 
+The `title` property accepts Boolean values as well. Setting `title` to `false` instructs the Dialog to render no title. 
 
 ```html-preview
 <div id="app"></div>
