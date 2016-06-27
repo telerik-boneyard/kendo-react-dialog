@@ -88,7 +88,7 @@ import { Dialog } from 'kendo-react-dialog';
 var Dialog = require('kendo-react-dialog').Dialog;
 ```
 
-> To install the npm package, it is recommended that you use Node.js 4.0.0 or later versions.
+> To install the npm package, it is recommended that you use Node.js 5.0.0 or later versions.
 
 ## Browser Support
 
