@@ -8,7 +8,7 @@ position: 1
 
 # Dialog Overview
 
-The Kendo UI Dialog is a React component that communicates information to the user and prompts them for a response through a modal dialog. It provides an easy way to display specific content to the audience and encourage the user to take a specific action.
+The Kendo UI Dialog is a React component that communicates information to the user and prompts them for a response through a modal dialog. It provides an easy way to display specific content to the audience and encourages the user to take a specific action.
 
 The Dialog is part of the [kendo-react-dialog npm package](https://www.npmjs.com/package/@telerik/kendo-react-dialog).
 
